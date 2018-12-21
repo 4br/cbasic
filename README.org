@@ -1,0 +1,53 @@
+#+TITLE: Basics Of C Programming
+#+AUTHOR: Abraham Raji
+#+EMAIL: abrahamraji99@gmail.com
+#+STARTUP: overview
+#+CREATOR: 4br
+#+LANGUAGE: en
+
+*Reference Resources*
+- C Programming Language, 2nd Edition by Brian W. Kernighan and Dennis M. Ritchie
+- [[https://www.tutorialspoint.com/cprogramming/index.htm][C Tutorials]] by Tutorial's point
+
+* Installing the C compiler
+A compiler is basically what reads the code you have written and turns it into 1s and 0s, so that physical hardware such as processors and ICs can understand and execute the code you've written. If you already have a compiler installed skip this step. If you have already installed an IDE like CodeBlocks chances are the compiler is installed too. 
+
+If not, follow the steps shown in this [[https://www.youtube.com/watch?v=sXW2VLrQ3Bs][video]] if you are on a windows PC. 
+
+If you're on a Linux system open the terminal and run one of the commands below based on your OS:
+- Ubuntu/Debian
+#+BEGIN_SRC shell
+sudo apt-get install gcc
+#+END_SRC
+- Arch Linux
+#+BEGIN_SRC shell
+sudo pacman -S gcc
+#+END_SRC
+- Fedora
+#+BEGIN_SRC shell
+sudo yum install gcc
+#+END_SRC
+
+* Installing a text editor
+This is often a point of controversy, my advice here is to use whatever you're comfortable with or whatever is being used in your classes at your school or college. That being said I would personally suggest using [[https://code.visualstudio.com/][Visual Studio Code]] which in my opinion is a much better text editor and can be used as an IDE for multiple languages.
+
+To install vs code follow the steps show in this [[https://www.youtube.com/watch?v=8tkuu0Rugg4][video]] if you're on windows.
+
+On follow on of the following steps based on your distribution:
+- Ubuntu
+  Follow the instructions in this [[https://www.youtube.com/watch?v=mfxP0REDWs4][video]]
+- Arch Linux
+  Execute in terminal:
+  #+BEGIN_SRC shell
+  sudo pacman -S code
+  #+END_SRC
+- Fedora
+  Follow the steps from this [[https://tecadmin.net/install-visual-studio-code-editor-in-fedora/][link]] or search your app-store.
+* Running Code in VS Code
+You can run code within C++ itself just like in codeblocks. To enable the functionality follow the steps from this [[https://www.youtube.com/watch?v=tQTrs5G0H5c&feature=youtu.be][video]]
+
+Now you can write and run code in vs code. :)
+
+* Relevant Tutorials:
+- [[https://www.youtube.com/watch?v=iWx3yyFMWQA&index=3&list=PL6gx4Cwl9DGAKIXv8Yr6nhGJ9Vlcjyymq][C Programming Tutorials]] by [[https://www.youtube.com/channel/UCJbPGzawDH1njbqV-D5HqKw][thenewboston]]
+- [[https://www.udemy.com/c-programming-tutorial-for-absolute-beginners/][C Programming Tutorial for Absolute Beginners]] in [[https://www.udemy.com/][Udemy]]
