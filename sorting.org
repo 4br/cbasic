@@ -36,6 +36,9 @@ void selectionSort(int arr[], int n)
   
         // Swap the found minimum element with the first element 
         swap(&arr[min_idx], &arr[i]); 
+        //  the idea is to swap the values of the variables and another way of doing the above step is:
+        // declare a variable: int temp = 0
+        // and then use that variable as a buffer to swap the variables
     } 
 } 
   
@@ -85,6 +88,9 @@ void bubbleSort(int arr[], int n)
        for (j = 0; j < n-i-1; j++)  
            if (arr[j] > arr[j+1]) 
               swap(&arr[j], &arr[j+1]); 
+        //  the idea is to swap the values of the variables and another way of doing the above step is:
+        // declare a variable: int temp = 0
+        // and then use that variable as a buffer to swap the variables
 } 
   
 /* Function to print an array */
