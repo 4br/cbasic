@@ -1,0 +1,164 @@
+* Sorting in c/c++
+Sorting is important in programming for the same reason it is important in everyday life. It is easier and faster to locate items in a sorted list than unsorted. Sorting algorithms can be used in a program to sort an array for later searching or writing out to an ordered file or report.
+
+In computer science, a sorting algorithm is an algorithm that puts elements of a list in a certain order. More formally, the output of any sorting algorithm must satisfy two conditions:
+- The output is in nondecreasing order (each element is no smaller than the previous element according to the desired total order);
+- The output is a permutation (a reordering, yet retaining all of the original elements) of the input.
+
+Further, the input data is often stored in an array, which allows random access, rather than a stack, which only allows sequential access; though many algorithms can be applied to either type of data after suitable modification.
+
+*** Selection Sort
+The algorithm divides the input list into two parts: the sublist of items already sorted, which is built up from left to right at the front (left) of the list, and the sublist of items remaining to be sorted that occupy the rest of the list. Initially, the sorted sublist is empty and the unsorted sublist is the entire input list. The algorithm proceeds by finding the smallest (or largest, depending on sorting order) element in the unsorted sublist, exchanging (swapping) it with the leftmost unsorted element (putting it in sorted order), and moving the sublist boundaries one element to the right. 
+
+#+BEGIN_SRC c
+// C/C++ program for implementation of selection sort 
+#include <stdio.h> 
+  
+void swap(int *xp, int *yp) 
+{ 
+    int temp = *xp; 
+    *xp = *yp; 
+    *yp = temp; 
+} 
+  
+void selectionSort(int arr[], int n) 
+{ 
+    int i, j, min_idx; 
+  
+    // One by one move boundary of unsorted subarray 
+    for (i = 0; i < n-1; i++) 
+    { 
+        // Find the minimum element in unsorted array 
+        min_idx = i; 
+        for (j = i+1; j < n; j++) 
+          if (arr[j] < arr[min_idx]) 
+            min_idx = j; 
+  
+        // Swap the found minimum element with the first element 
+        swap(&arr[min_idx], &arr[i]); 
+    } 
+} 
+  
+/* Function to print an array */
+void printArray(int arr[], int size) 
+{ 
+    int i; 
+    for (i=0; i < size; i++) 
+        printf("%d ", arr[i]); 
+    printf("\n"); 
+} 
+  
+// Driver program to test above functions 
+int main() 
+{ 
+    int arr[] = {64, 25, 12, 22, 11}; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    selectionSort(arr, n); 
+    printf("Sorted array: \n"); 
+    printArray(arr, n); 
+    return 0; 
+} 
+#+END_SRC
+
+*** Bubble Sort
+Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent pairs and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble" to the top of the list. Although the algorithm is simple, it is too slow and impractical for most problems even when compared to insertion sort. Bubble sort can be practical if the input is in mostly sorted order with some out-of-order elements nearly in position.
+
+#+BEGIN_SRC c
+
+// C/C++ program for implementation of Bubble sort 
+#include <stdio.h> 
+  
+void swap(int *xp, int *yp) 
+{ 
+    int temp = *xp; 
+    *xp = *yp; 
+    *yp = temp; 
+} 
+  
+// A function to implement bubble sort 
+void bubbleSort(int arr[], int n) 
+{ 
+   int i, j; 
+   for (i = 0; i < n-1; i++)       
+  
+       // Last i elements are already in place    
+       for (j = 0; j < n-i-1; j++)  
+           if (arr[j] > arr[j+1]) 
+              swap(&arr[j], &arr[j+1]); 
+} 
+  
+/* Function to print an array */
+void printArray(int arr[], int size) 
+{ 
+    int i; 
+    for (i=0; i < size; i++) 
+        printf("%d ", arr[i]); 
+    printf("n"); 
+} 
+  
+// Driver program to test above functions 
+int main() 
+{ 
+    int arr[] = {64, 34, 25, 12, 22, 11, 90}; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    bubbleSort(arr, n); 
+    printf("Sorted array: \n"); 
+    printArray(arr, n); 
+    return 0; 
+} 
+#+END_SRC
+
+*** Insertion Sort
+Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain. 
+
+#+BEGIN_SRC c
+
+// C/C++ program for insertion sort 
+#include <stdio.h> 
+#include <math.h> 
+  
+/* Function to sort an array using insertion sort*/
+void insertionSort(int arr[], int n) 
+{ 
+   int i, key, j; 
+   for (i = 1; i < n; i++) 
+   { 
+       key = arr[i]; 
+       j = i-1; 
+  
+       /* Move elements of arr[0..i-1], that are 
+          greater than key, to one position ahead 
+          of their current position */
+       while (j >= 0 && arr[j] > key) 
+       { 
+           arr[j+1] = arr[j]; 
+           j = j-1; 
+       } 
+       arr[j+1] = key; 
+   } 
+} 
+  
+// A utility function to print an array of size n 
+void printArray(int arr[], int n) 
+{ 
+   int i; 
+   for (i=0; i < n; i++) 
+       printf("%d ", arr[i]); 
+   printf("\n"); 
+} 
+  
+  
+  
+/* Driver program to test insertion sort */
+int main() 
+{ 
+    int arr[] = {12, 11, 13, 5, 6}; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+  
+    insertionSort(arr, n); 
+    printArray(arr, n); 
+  
+    return 0; 
+} 
+
+#+END_SRC
